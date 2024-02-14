@@ -1,5 +1,6 @@
 import { City as CityModel } from "../models/City";
-import { City } from "../types";
+import { cityDTO } from "../models/DTO/City.dto";
+import { City, CityDTO } from "../types";
 import { citiesData } from "../utils/data";
 import { ErrorClient } from "../utils/errorClient";
 export const createCity = async (data: Partial<City>): Promise<City> => {
@@ -7,22 +8,22 @@ export const createCity = async (data: Partial<City>): Promise<City> => {
     return city
 }
 
-export const getAllCities = async (): Promise<City[]> => {
+export const getAllCities = async (): Promise<CityDTO[]> => {
     const cities = await CityModel.find()
     if( cities.length === 0 ) throw new ErrorClient( 'No cities found', 404 )
-    return cities
+    return cities.map( cityDTO )
 }
 
-export const getOneCity = async( id: string ):Promise<City>=>{
+export const getOneCity = async( id: string ):Promise<CityDTO>=>{
     const city = await CityModel.findById( id )
     if( !city ) throw new ErrorClient( 'Invalid ID', 404 )
-    return city
+    return cityDTO(city)
 }
 
-export const createAllCities = async ( ):Promise<City[]>=>{
+export const createAllCities = async ( ):Promise<CityDTO[]>=>{
     const cities = await CityModel.insertMany( citiesData )
     if( cities.length === 0 ) throw new ErrorClient( 'Failed to create cities', 404 )
-    return cities
+    return cities.map( cityDTO )
 }
 
 export default {
