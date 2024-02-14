@@ -18,8 +18,14 @@ const createCity = async ( req: Request, res: Response ): Promise<void> => {
     HttpResponse.Created(res, city)
 }
 
+const createAllCities = async ( _req: Request, res: Response ):Promise<void>=>{
+    const cities = await citiesService.createAllCities()
+    HttpResponse.Ok(res, cities)
+}
+
 export default { 
     getAllCities: catchedAsync(getAllCities), 
     getOneCity: catchedAsync(getOneCity), 
-    createCity: catchedAsync(createCity)
+    createCity: catchedAsync(createCity),
+    createAllCities: catchedAsync(createAllCities)
 }

@@ -22,3 +22,14 @@ export interface Review{
 export interface Itinerary{
 
 }
+
+interface CityDTO {
+    _id: string
+    name: string
+    country: string
+    description: string
+    image: string
+    currency: string
+    language: string
+    averageRating: number
+}

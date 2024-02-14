@@ -7,5 +7,6 @@ const citiesRouter = express.Router()
 citiesRouter.get( '/', citiesController.getAllCities)
 citiesRouter.get( '/:id', citiesController.getOneCity)
 citiesRouter.post( '/', validator(citySchema), citiesController.createCity)
+citiesRouter.post( '/all', citiesController.createAllCities)
 
 export default citiesRouter
