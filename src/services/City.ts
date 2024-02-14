@@ -26,9 +26,16 @@ export const createAllCities = async ( ):Promise<CityDTO[]>=>{
     return cities.map( cityDTO )
 }
 
+export const updateCity = async( id: string, data: Partial<City> ):Promise<CityDTO>=>{
+    const city = await CityModel.findByIdAndUpdate( id, data, { new: true } )
+    if( !city ) throw new ErrorClient( 'Invalid ID', 404 )
+    return cityDTO(city)
+}
+
 export default {
     createCity: createCity,
     getAllCities: getAllCities,
     getOneCity: getOneCity,
-    createAllCities: createAllCities
+    createAllCities: createAllCities,
+    updateCity: updateCity
 }
