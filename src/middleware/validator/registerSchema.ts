@@ -10,9 +10,9 @@ const registerSchema = joi.object({
         'string.min': 'The country must have at least 3 characters',
         'string.max': 'The country must have at most 16 characters',
     }),
-    email: joi.string().email().min(10).max(20).trim().required().messages( {
-        'string.min': 'The name must have at least 10 characters',
-        'string.max': 'The name must have at most 20 characters',
+    email: joi.string().email().min(10).max(30).trim().required().messages( {
+        'string.min': 'The email must have at least 10 characters',
+        'string.max': 'The email must have at most 20 characters',
         'string.email': 'The email must be a valid email'
     } ),
     password: joi.string().min(8).max(16).trim().required().messages({
@@ -24,11 +24,11 @@ const registerSchema = joi.object({
         'string.max': 'The country must have at most 20 characters',
         'string.pattern.base': 'The country must only contain letters'
     }),
-    description: joi.string().min(30).max(500).trim().required().messages({
+    description: joi.string().min(30).max(500).trim().messages({
         'string.min': 'The description must have at least 30 characters',
         'string.max': 'The description must have at most 500 characters',
     }),
-    image: joi.string().uri().required().messages({
+    image: joi.string().uri().messages({
         'string.uri': 'The image must be a valid url'
     }),
     
