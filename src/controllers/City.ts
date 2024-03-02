@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import citiesService from '../services/City';
 import { HttpResponse } from '../middleware/handleResponse';
 import { catchedAsync } from '../utils/catchedAsync';
+
 const getAllCities = async (_req: Request, res: Response): Promise<void> => {
     const cities = await citiesService.getAllCities()
     HttpResponse.Ok(res, cities)
