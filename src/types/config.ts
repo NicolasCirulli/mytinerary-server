@@ -3,7 +3,7 @@ dotenv.config()
 
 const port = process.env.PORT || 4000
 const mongo_uri = process.env.MONGO_URI || ""
-const secret_key = process.env.secret_key || ""
+const secret_key = process.env.JWT_SECRET || ""
 export default {
   api: {
     MONGO_URI: mongo_uri,
