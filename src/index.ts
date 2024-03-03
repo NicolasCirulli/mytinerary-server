@@ -1,12 +1,16 @@
 import express from 'express'
 import indexRouter from './routes'
 import config from './types/config'
+import cors from 'cors'
 import './config/db'
 import errorHandlerMiddleware from './middleware/handleErrors'
 
 const app = express()
 
+app.use( cors() )
+
 app.use( express.json() )
+
 
 app.use( '/api', indexRouter )
 
