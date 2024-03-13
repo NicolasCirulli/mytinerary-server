@@ -1,3 +1,4 @@
+import { isValidObjectId } from "mongoose";
 import { City as CityModel } from "../models/City";
 import { cityDTO } from "../models/DTO/City.dto";
 import { City, CityDTO } from "../types";
@@ -15,8 +16,9 @@ export const getAllCities = async (): Promise<CityDTO[]> => {
 }
 
 export const getOneCity = async( id: string ):Promise<CityDTO>=>{
-    const city = await CityModel.findById( id )
-    if( !city ) throw new ErrorClient( 'Invalid ID', 404 )
+    if(  !isValidObjectId( id ) ) throw new ErrorClient('The provided city ID is not a valid Id.', 400)
+    const city = await CityModel.findById( id ).populate( {path: 'itineraries', select: '-__v -likes -reviews -city'} )
+    if( !city ) throw new ErrorClient( 'Not city found', 404 )
     return cityDTO(city)
 }
 
@@ -26,7 +28,7 @@ export const createAllCities = async ( ):Promise<CityDTO[]>=>{
     return cities.map( cityDTO )
 }
 
-export const updateCity = async( id: string, data: Partial<City> ):Promise<CityDTO>=>{
+export const updateCity = async( id: string, data: Object ):Promise<CityDTO>=>{
     const city = await CityModel.findByIdAndUpdate( id, data, { new: true } )
     if( !city ) throw new ErrorClient( 'Invalid ID', 404 )
     return cityDTO(city)

@@ -120,4 +120,64 @@ export const citiesData = [
       "language": "Spanish"
     }
   ]
-  
+export const itinerariesParis = [
+  {
+    title: "Classic Paris Tour",
+    price: 4,
+    guide: "Sofia",
+    guide_image: "https://xsgames.co/randomusers/assets/avatars/female/0.jpg",
+    duration: 6,
+    hashtags: ["#Paris", "#EiffelTower", "#Louvre", "#SeineRiver"],
+    description: "Immerse yourself in the iconic landmarks of Paris on this 6-hour classic tour. Explore the Louvre, marvel at the Eiffel Tower, cruise the Seine River, and much more.",
+    activities: [
+      "https://cdn.britannica.com/02/121002-050-92DB902F/Louvre-Museum-pyramid-Paris-Pei-IM.jpg", 
+      "https://res.cloudinary.com/dtljonz0f/image/upload/f_auto/q_auto/v1/gc-v1/paris-pass/blog/guide-to-a-paris-river-cruise-eiffel.jpg", 
+      "https://cdn2.veltra.com/ptr/20170424135437_443145140_2604_0.jpg?imwidth=800&impolicy=custom"
+    ],
+  },
+  {
+    title: "Secrets of Montmartre and the Latin Quarter",
+    price: 3,
+    guide: "Lucas",
+    guide_image: "https://xsgames.co/randomusers/assets/avatars/male/72.jpg",
+    duration: 5,
+    hashtags: ["#Montmartre", "#SacreCoeur", "#JardinDuLuxembourg", "#LatinQuarter"],
+    description: "Uncover the bohemian charm of Montmartre and the historic Latin Quarter on this 5-hour tour. Wander through hidden vineyards, visit the Sacré-Coeur Basilica, and soak in the artistic atmosphere.",
+    activities: [ 
+      "https://images.france.fr/zeaejvyq9bhj/78HkYDIusM8o6yCwwSuoCC/7e53b3234b0f89c8f3b4520fa620010b/sacre-coeur-paris.jpg?w=1200&h=630&q=70&fl=progressive&fit=fill", 
+      "https://www.discoverwalks.com/blog/wp-content/uploads/2019/05/800px-montmartre_vineyard_2012-10-09_n2.jpg", 
+      "https://afar.brightspotcdn.com/dims4/default/42d36b0/2147483647/strip/true/crop/1600x800+0+0/resize/1440x720!/quality/90/?url=https%3A%2F%2Fafar-media-production-web.s3.us-west-2.amazonaws.com%2Fbrightspot%2F1a%2F7e%2F8139faa2b170a249d0dc9d37c117%2Foriginal-7f068ac03a1d9dbad44e27ebd62d8603.jpg"
+    ],
+  }
+]
+export const itinerariesTokyo = [
+  {
+    title: "Classic Tokyo Tour",
+    price: 3,
+    guide: "Dario",
+    guide_image: "https://xsgames.co/randomusers/assets/avatars/male/32.jpg",
+    duration: 7,
+    hashtags: ["#Tokyo", "#MeijiShrine", "#ShibuyaCrossing", "#TokyoSkytree"],
+    description: "Immerse yourself in the culture and tradition of Tokyo on this classic 8-hour tour. Explore the Meiji Shrine, experience the electrifying Shibuya Crossing, and take in panoramic views from the Tokyo Skytree.",
+    activities: [
+      "https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/27/60/17.jpg", 
+      "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/6c/47/7a.jpg", 
+      "https://a3.cdn.japantravel.com/photo/3016-194379/1440x960!/tokyo-shibuya-crossing-194379.jpg"
+    ],
+  },
+  {
+    title: "Secrets of Akihabara and Harajuku",
+  price: 3,
+  guide: "Rodger",
+  guide_image: "https://xsgames.co/randomusers/assets/avatars/male/31.jpg",
+  duration: 6,
+  hashtags: ["#Akihabara", "#Harajuku", "#TakeshitaStreet", "#MeijiJingu"],
+  description: "Uncover Tokyo's cutting-edge technology and youth culture on this 5-hour tour of Akihabara and Harajuku. Explore streets filled with electronics, discover the vibrant fashion of Takeshita Street, and visit the Meiji Jingu Shrine.",
+  activities: [
+    "https://rimage.gnst.jp/livejapan.com/public/article/detail/a/00/00/a0000110/img/basic/a0000110_main.jpg", 
+    "https://media.timeout.com/images/105900330/750/422/image.jpg", 
+    "https://tokyotourists.com/wp-content/uploads/2023/02/Harajuku-Takeshita-Street.jpg", 
+  ],
+
+  }
+]

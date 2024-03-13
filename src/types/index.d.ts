@@ -40,7 +40,18 @@ export interface User{
 }
 
 export interface Itinerary{
-
+    _id: ObjectId;
+    title: string;
+    price: number;
+    guide: string;
+    duration: number;
+    hashtags: string[];
+    guide_image: string;
+    description: string;
+    activities?: string[];
+    likes?: mongoose.Schema.Types.ObjectId[]; 
+    reviews?: mongoose.Schema.Types.ObjectId[];
+    city: mongoose.Schema.Types.ObjectId;
 }
 
 interface CityDTO {
@@ -51,7 +62,8 @@ interface CityDTO {
     image: string
     currency: string
     language: string
-    averageRating: number
+    averageRating: number,
+    itineraries: Itinerary[]
 }
 
 export interface UserDTO{
@@ -66,4 +78,19 @@ export interface UserDTO{
     api_key?: string,
     whishlist: ObjectId[]
     token?:string
+}
+
+export interface ItineraryDTO{
+    _id: string;
+    title: string;
+    price: number;
+    guide: string;
+    duration: number;
+    hashtags: string[];
+    guide_image: string;
+    description: string;
+    activities?: string[];
+    likes?: string[]; 
+    reviews?: string[];
+    city: City;
 }
