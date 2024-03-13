@@ -11,6 +11,7 @@ export const cityDTO = (city: City): CityDTO => {
         image: city.image,
         currency: city.currency,
         language: city.language,
-        averageRating: city.averageRating
+        averageRating: city.averageRating,
+        itineraries: city.itineraries
     }
 }

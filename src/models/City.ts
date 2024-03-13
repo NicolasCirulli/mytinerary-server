@@ -10,7 +10,7 @@ const citySchema = new mongoose.Schema({
     language: { type: String, required: true },
     averageRating: { type: Number, default: 0 },
     reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Review' }],
-    itineraries: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Itinerary' }]
+    itineraries: [{ type: mongoose.Schema.Types.ObjectId, ref: 'itinerary' }]
 
 })
 
