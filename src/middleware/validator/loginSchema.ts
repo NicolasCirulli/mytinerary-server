@@ -7,8 +7,8 @@ const loginSchema = joi.object({
         'string.email': 'The email must be a valid email'
     } ),
     password: joi.string().min(8).max(16).trim().required().messages({
-        'string.min': 'The country must have at least 8 characters',
-        'string.max': 'The country must have at most 16 characters',
+        'string.min': 'The password must have at least 8 characters',
+        'string.max': 'The password must have at most 16 characters',
     })
 })
 
