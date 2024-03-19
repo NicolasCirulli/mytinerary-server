@@ -3,6 +3,8 @@ import { User } from "../types";
 import bcryptjs from "bcryptjs"
 import jwt from 'jsonwebtoken'
 import config from "../types/config";
+import  mongoose  from "mongoose";
+import { ErrorClient } from "../utils/errorClient";
 
 
 export const getUserByEmail = async( email:string = "" ) => {
@@ -24,9 +26,22 @@ export const generateToken = async( email:string, time:string ) => {
     return jwt.sign( {email: email}, config.api.JWT_SECRET, {expiresIn: time} )
 }
 
+export const wishList = async( email:string, idItinerary: string ): Promise<any> =>{
+    const user = await getUserByEmail( email )
+    if( !user ) throw new ErrorClient( "Any user with this email", 400 )
+    if( user?.whishlist.find( id => String(id) == idItinerary ) ){
+        user.whishlist = user.whishlist.filter( id => String(id) != idItinerary )
+    }else{
+        user.whishlist.push( new mongoose.Types.ObjectId( idItinerary ) )
+    }
+    user.save()
+    return user
+}
+
 export default{
     createUser,
     getUserByEmail,
     validatePassword,
-    generateToken
+    generateToken,
+    wishList
 }
