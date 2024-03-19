@@ -11,7 +11,6 @@ app.use( cors() )
 
 app.use( express.json() )
 
-
 app.use( '/api', indexRouter )
 
 app.use( (err:any, _req:any, res:any, _next:any) => {
