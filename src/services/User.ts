@@ -38,10 +38,16 @@ export const wishList = async( email:string, idItinerary: string ): Promise<any>
     return user
 }
 
+export const update = async( email:string, data: Partial<User> ):Promise<any> => {
+    const update = await userModel.findOneAndUpdate( {email: email}, data, {new:true} )
+    return update
+}
+
 export default{
     createUser,
     getUserByEmail,
     validatePassword,
     generateToken,
-    wishList
+    wishList,
+    update
 }
